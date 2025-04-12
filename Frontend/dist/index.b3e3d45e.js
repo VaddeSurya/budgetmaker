@@ -40595,6 +40595,7 @@ var _react = require("react");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
+var _constants = require("../utils/constants");
 var _s = $RefreshSig$();
 const Main = ()=>{
     _s();
@@ -40607,11 +40608,10 @@ const Main = ()=>{
     const [isLoading, setIsLoading] = (0, _react.useState)(false);
     const [transactionInputs, setTransactionInputs] = (0, _react.useState)({});
     const navigate = (0, _reactRouterDom.useNavigate)();
-    const API_BASE_URL = "http://localhost:3001";
     const fetchBudgetData = async (id)=>{
         try {
             setIsLoading(true);
-            const response = await (0, _axiosDefault.default).get(`${API_BASE_URL}/budget/${id}`, {
+            const response = await (0, _axiosDefault.default).get(`${(0, _constants.URL)}/budget/${id}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -40656,7 +40656,7 @@ const Main = ()=>{
         }
         try {
             setIsLoading(true);
-            const response = await (0, _axiosDefault.default).post(`${API_BASE_URL}/budget/${userId}`, {
+            const response = await (0, _axiosDefault.default).post(`${(0, _constants.URL)}/budget/${userId}`, {
                 value: amount
             }, {
                 headers: {
@@ -40696,7 +40696,7 @@ const Main = ()=>{
         }
         try {
             setIsLoading(true);
-            const response = await (0, _axiosDefault.default).post(`${API_BASE_URL}/budget/${userId}/transaction/${globalIndex}`, {
+            const response = await (0, _axiosDefault.default).post(`${(0, _constants.URL)}/budget/${userId}/transaction/${globalIndex}`, {
                 type,
                 purchase: input.purchase,
                 cost
@@ -40725,7 +40725,7 @@ const Main = ()=>{
         }
         try {
             setIsLoading(true);
-            const response = await (0, _axiosDefault.default).delete(`${API_BASE_URL}/budget/${userId}/entry/${globalIndex}`, {
+            const response = await (0, _axiosDefault.default).delete(`${(0, _constants.URL)}/budget/${userId}/entry/${globalIndex}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -40748,7 +40748,7 @@ const Main = ()=>{
         }
         try {
             setIsLoading(true);
-            const response = await (0, _axiosDefault.default).delete(`${API_BASE_URL}/budget/${userId}/transaction/${globalIndex}/${transactionId}`, {
+            const response = await (0, _axiosDefault.default).delete(`${(0, _constants.URL)}/budget/${userId}/transaction/${globalIndex}/${transactionId}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -41597,7 +41597,7 @@ $RefreshReg$(_c, "Main");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jo6P5":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constants":"hB8jg"}],"jo6P5":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
@@ -46357,6 +46357,13 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hB8jg":[function(require,module,exports,__globalThis) {
+// export const URL = "https://budgetmaker.onrender.com"
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "URL", ()=>URL);
+const URL = "http://localhost:3001";
+
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9R1Eu":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -47096,6 +47103,7 @@ var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _constants = require("../utils/constants");
 var _s = $RefreshSig$();
 function SignUp() {
     _s();
@@ -47119,7 +47127,7 @@ function SignUp() {
             setError("Password must be at least 6 characters");
             return;
         }
-        (0, _axiosDefault.default).post('http://localhost:3001/register', {
+        (0, _axiosDefault.default).post((0, _constants.URL) + '/register', {
             name,
             email,
             password
@@ -47148,48 +47156,48 @@ function SignUp() {
                         className: "w-64 h-64 bg-blue-500/10 rounded-full absolute top-10 left-10 animate-pulse blur-3xl"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-96 h-96 bg-purple-500/10 rounded-full absolute bottom-20 right-20 animate-pulse blur-3xl delay-1000"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-4 h-4 bg-blue-400/50 rounded-full absolute top-1/4 left-1/3 animate-particle-1 blur-sm"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-6 h-6 bg-purple-400/50 rounded-full absolute bottom-1/3 right-1/4 animate-particle-2 blur-sm"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 55,
+                        lineNumber: 56,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-5 h-5 bg-blue-300/50 rounded-full absolute top-1/2 left-1/5 animate-particle-3 blur-sm"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 56,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "absolute inset-0 bg-gradient-to-t from-blue-900/10 to-purple-900/10 animate-pulse-slow"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 57,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/SignUp.js",
-                lineNumber: 51,
+                lineNumber: 52,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47199,7 +47207,7 @@ function SignUp() {
                         className: "absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-0 hover:opacity-20 transition-opacity duration-500 blur-md"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -47207,7 +47215,7 @@ function SignUp() {
                         children: "Create Account"
                     }, void 0, false, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -47224,7 +47232,7 @@ function SignUp() {
                                         children: "Full Name"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 69,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -47237,20 +47245,20 @@ function SignUp() {
                                         className: "w-full px-5 py-4 bg-gray-900/70 text-white border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 placeholder-gray-500 hover:bg-gray-800/80"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 72,
+                                        lineNumber: 73,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "absolute inset-y-0 right-0 w-2 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-y-0 group-hover:scale-y-100 origin-center"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 81,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/SignUp.js",
-                                lineNumber: 68,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47262,7 +47270,7 @@ function SignUp() {
                                         children: "Email"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 85,
+                                        lineNumber: 86,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -47275,20 +47283,20 @@ function SignUp() {
                                         className: "w-full px-5 py-4 bg-gray-900/70 text-white border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 placeholder-gray-500 hover:bg-gray-800/80"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 88,
+                                        lineNumber: 89,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "absolute inset-y-0 right-0 w-2 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-y-0 group-hover:scale-y-100 origin-center"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/SignUp.js",
-                                lineNumber: 84,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47300,7 +47308,7 @@ function SignUp() {
                                         children: "Password"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 101,
+                                        lineNumber: 102,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -47313,20 +47321,20 @@ function SignUp() {
                                         className: "w-full px-5 py-4 bg-gray-900/70 text-white border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 placeholder-gray-500 hover:bg-gray-800/80"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "absolute inset-y-0 right-0 w-2 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-y-0 group-hover:scale-y-100 origin-center"
                                     }, void 0, false, {
                                         fileName: "src/components/SignUp.js",
-                                        lineNumber: 113,
+                                        lineNumber: 114,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/SignUp.js",
-                                lineNumber: 100,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this),
                             error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -47334,7 +47342,7 @@ function SignUp() {
                                 children: error
                             }, void 0, false, {
                                 fileName: "src/components/SignUp.js",
-                                lineNumber: 117,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -47343,13 +47351,13 @@ function SignUp() {
                                 children: "Sign Up"
                             }, void 0, false, {
                                 fileName: "src/components/SignUp.js",
-                                lineNumber: 122,
+                                lineNumber: 123,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 67,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -47363,25 +47371,25 @@ function SignUp() {
                                 children: "Login"
                             }, void 0, false, {
                                 fileName: "src/components/SignUp.js",
-                                lineNumber: 132,
+                                lineNumber: 133,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/SignUp.js",
-                        lineNumber: 130,
+                        lineNumber: 131,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/SignUp.js",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/SignUp.js",
-        lineNumber: 50,
+        lineNumber: 51,
         columnNumber: 5
     }, this);
 }
@@ -47400,7 +47408,7 @@ $RefreshReg$(_c, "SignUp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hsmcH":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constants":"hB8jg"}],"hsmcH":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5afe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47415,6 +47423,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _constants = require("../utils/constants");
 var _s = $RefreshSig$();
 function Login() {
     _s();
@@ -47437,7 +47446,7 @@ function Login() {
         }
         setLoading(true);
         try {
-            const response = await (0, _axiosDefault.default).post('http://localhost:3001/login', {
+            const response = await (0, _axiosDefault.default).post((0, _constants.URL) + '/login', {
                 email,
                 password
             }, {
@@ -47472,48 +47481,48 @@ function Login() {
                         className: "w-64 h-64 bg-blue-500/10 rounded-full absolute top-10 left-10 animate-pulse blur-3xl"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-96 h-96 bg-purple-500/10 rounded-full absolute bottom-20 right-20 animate-pulse blur-3xl delay-1000"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 69,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-4 h-4 bg-blue-400/50 rounded-full absolute top-1/4 left-1/3 animate-particle-1 blur-sm"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 70,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-6 h-6 bg-purple-400/50 rounded-full absolute bottom-1/3 right-1/4 animate-particle-2 blur-sm"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 71,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-5 h-5 bg-blue-300/50 rounded-full absolute top-1/2 left-1/5 animate-particle-3 blur-sm"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 72,
+                        lineNumber: 73,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "absolute inset-0 bg-gradient-to-t from-blue-900/10 to-purple-900/10 animate-pulse-slow"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Login.js",
-                lineNumber: 67,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47523,7 +47532,7 @@ function Login() {
                         className: "absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-0 hover:opacity-20 transition-opacity duration-500 blur-md"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -47531,7 +47540,7 @@ function Login() {
                         children: "Welcome Back"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 79,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -47548,7 +47557,7 @@ function Login() {
                                         children: "Email"
                                     }, void 0, false, {
                                         fileName: "src/components/Login.js",
-                                        lineNumber: 85,
+                                        lineNumber: 86,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -47561,20 +47570,20 @@ function Login() {
                                         className: "w-full px-5 py-4 bg-gray-900/70 text-white border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 placeholder-gray-500 hover:bg-gray-800/80"
                                     }, void 0, false, {
                                         fileName: "src/components/Login.js",
-                                        lineNumber: 88,
+                                        lineNumber: 89,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "absolute inset-y-0 right-0 w-2 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-y-0 group-hover:scale-y-100 origin-center"
                                     }, void 0, false, {
                                         fileName: "src/components/Login.js",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login.js",
-                                lineNumber: 84,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -47586,7 +47595,7 @@ function Login() {
                                         children: "Password"
                                     }, void 0, false, {
                                         fileName: "src/components/Login.js",
-                                        lineNumber: 101,
+                                        lineNumber: 102,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -47599,20 +47608,20 @@ function Login() {
                                         className: "w-full px-5 py-4 bg-gray-900/70 text-white border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 placeholder-gray-500 hover:bg-gray-800/80"
                                     }, void 0, false, {
                                         fileName: "src/components/Login.js",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "absolute inset-y-0 right-0 w-2 bg-gradient-to-b from-blue-500 to-purple-500 rounded-r-xl transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-y-0 group-hover:scale-y-100 origin-center"
                                     }, void 0, false, {
                                         fileName: "src/components/Login.js",
-                                        lineNumber: 113,
+                                        lineNumber: 114,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Login.js",
-                                lineNumber: 100,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this),
                             error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -47620,7 +47629,7 @@ function Login() {
                                 children: error
                             }, void 0, false, {
                                 fileName: "src/components/Login.js",
-                                lineNumber: 117,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -47644,7 +47653,7 @@ function Login() {
                                                     fill: "none"
                                                 }, void 0, false, {
                                                     fileName: "src/components/Login.js",
-                                                    lineNumber: 132,
+                                                    lineNumber: 133,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
@@ -47653,31 +47662,31 @@ function Login() {
                                                     d: "M4 12a8 8 0 018-8v8h8a8 8 0 11-16 0z"
                                                 }, void 0, false, {
                                                     fileName: "src/components/Login.js",
-                                                    lineNumber: 133,
+                                                    lineNumber: 134,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/Login.js",
-                                            lineNumber: 131,
+                                            lineNumber: 132,
                                             columnNumber: 17
                                         }, this),
                                         "Logging in..."
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/Login.js",
-                                    lineNumber: 130,
+                                    lineNumber: 131,
                                     columnNumber: 15
                                 }, this) : 'Login'
                             }, void 0, false, {
                                 fileName: "src/components/Login.js",
-                                lineNumber: 122,
+                                lineNumber: 123,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 83,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -47691,25 +47700,25 @@ function Login() {
                                 children: "Sign Up"
                             }, void 0, false, {
                                 fileName: "src/components/Login.js",
-                                lineNumber: 145,
+                                lineNumber: 146,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 143,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Login.js",
-                lineNumber: 76,
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/Login.js",
-        lineNumber: 66,
+        lineNumber: 67,
         columnNumber: 5
     }, this);
 }
@@ -47728,7 +47737,7 @@ $RefreshReg$(_c, "Login");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"deoxv":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constants":"hB8jg"}],"deoxv":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$9eec = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

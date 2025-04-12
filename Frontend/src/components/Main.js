@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { URL } from "../utils/constants";
 
 const Main = () => {
   const [inputValue, setInputValue] = useState("");
@@ -13,12 +14,11 @@ const Main = () => {
   const [transactionInputs, setTransactionInputs] = useState({});
   const navigate = useNavigate();
 
-  const API_BASE_URL = "http://localhost:3001";
 
   const fetchBudgetData = async (id) => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`${API_BASE_URL}/budget/${id}`, {
+      const response = await axios.get(`${URL}/budget/${id}`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -70,7 +70,7 @@ const Main = () => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${API_BASE_URL}/budget/${userId}`,
+        `${URL}/budget/${userId}`,
         { value: amount },
         {
           headers: {
@@ -116,7 +116,7 @@ const Main = () => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${API_BASE_URL}/budget/${userId}/transaction/${globalIndex}`,
+        `${URL}/budget/${userId}/transaction/${globalIndex}`,
         { type, purchase: input.purchase, cost },
         {
           headers: {
@@ -147,7 +147,7 @@ const Main = () => {
     try {
       setIsLoading(true);
       const response = await axios.delete(
-        `${API_BASE_URL}/budget/${userId}/entry/${globalIndex}`,
+        `${URL}/budget/${userId}/entry/${globalIndex}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -175,7 +175,7 @@ const Main = () => {
     try {
       setIsLoading(true);
       const response = await axios.delete(
-        `${API_BASE_URL}/budget/${userId}/transaction/${globalIndex}/${transactionId}`,
+        `${URL}/budget/${userId}/transaction/${globalIndex}/${transactionId}`,
         {
           headers: {
             'Content-Type': 'application/json',

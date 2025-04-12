@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { URL } from '../utils/constants';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        'http://localhost:3001/login',
+        URL + '/login',
         { email, password },
         {
           headers: {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { URL } from '../utils/constants';
 
 function SignUp() {
   const [name, setName] = useState('');
@@ -25,7 +26,7 @@ function SignUp() {
       return;
     }
     axios.post(
-      'http://localhost:3001/register',
+      URL + '/register',
       { name, email, password },
       {
         headers: {
