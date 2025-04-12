@@ -9,8 +9,6 @@ const { body, validationResult } = require('express-validator');
 const winston = require('winston');
 
 const app = express();
-app.use(express.json())
-app.use(cors())
 
 // Logger setup
 const logger = winston.createLogger({
@@ -41,44 +39,24 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS configuration
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin) return callback(null, true);
-//     const allowedOrigins = [
-//       'https://deluxe-entremet-20f0e4.netlify.app',
-//       'http://localhost:1234',
-//       process.env.FRONTEND_URL
-//     ].filter(Boolean);
-//     if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true
-// };
-
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin) return callback(null, true);
-//     const allowedOrigins = [
-//       'https://deluxe-entremet-20f0e4.netlify.app',
-//       'http://localhost:1234',
-//       process.env.FRONTEND_URL
-//     ].filter(Boolean);
-//     if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true
-// };
-
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    const allowedOrigins = [
+      'https://deluxe-entremet-20f0e4.netlify.app/register',
+      'http://localhost:1234',
+      process.env.FRONTEND_URL
+    ].filter(Boolean);
+    if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
 
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
