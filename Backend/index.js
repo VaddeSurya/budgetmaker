@@ -43,7 +43,7 @@ const corsOptions = {
   origin: function (origin, callback) {
     if (!origin) return callback(null, true);
     const allowedOrigins = [
-      'https://deluxe-entremet-20f0e4.netlify.app/register',
+      'https://budgetmaker.onrender.com',
       'http://localhost:1234',
       process.env.FRONTEND_URL
     ].filter(Boolean);
