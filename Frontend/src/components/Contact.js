@@ -47,7 +47,7 @@ const Contact = () => {
             <p className="text-gray-700 text-md mt-2">
               LinkedIn:{" "}
               <a
-                href="https://www.linkedin.com/in/administrator"
+                href="https://www.linkedin.com/in/vadde-surya-3a6233258/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-600 hover:underline"

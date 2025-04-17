@@ -46358,11 +46358,11 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 exports.default = HttpStatusCode;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hB8jg":[function(require,module,exports,__globalThis) {
-// export const URL = "https://budgetmaker.onrender.com"
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "URL", ()=>URL);
-const URL = "http://localhost:3001";
+const URL = "https://budgetmaker.onrender.com" // export const URL = "http://localhost:3001"
+;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9R1Eu":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
